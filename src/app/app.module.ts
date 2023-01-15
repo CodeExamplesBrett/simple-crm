@@ -14,7 +14,8 @@ import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field'; 
 import { MatDatepickerModule } from '@angular/material/datepicker'; 
 import { MatProgressBarModule } from '@angular/material/progress-bar'; 
-import {MatCardModule} from '@angular/material/card'; 
+import { MatCardModule } from '@angular/material/card'; 
+import { MatMenuModule } from '@angular/material/menu'; 
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { UserComponent } from './user/user.component';
 import { DialogAddUserComponent } from './dialog-add-user/dialog-add-user.component'; 
@@ -26,13 +27,19 @@ import { provideAuth,getAuth } from '@angular/fire/auth';
 import { provideDatabase,getDatabase } from '@angular/fire/database';
 import { provideFirestore,getFirestore } from '@angular/fire/firestore';
 import { AngularFireModule } from '@angular/fire/compat';
+import { UsersDetailComponent } from './users-detail/users-detail.component';
+import { DialogEditAddressComponent } from './dialog-edit-address/dialog-edit-address.component';
+import { DialogEditUserComponent } from './dialog-edit-user/dialog-edit-user.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     DashboardComponent,
     UserComponent,
-    DialogAddUserComponent
+    DialogAddUserComponent,
+    UsersDetailComponent,
+    DialogEditAddressComponent,
+    DialogEditUserComponent
   ],
   imports: [
     BrowserModule,
@@ -50,6 +57,7 @@ import { AngularFireModule } from '@angular/fire/compat';
     MatNativeDateModule,
     MatProgressBarModule,
     MatCardModule,
+    MatMenuModule,
     FormsModule,
     AngularFireModule,
     provideFirebaseApp(() => initializeApp(environment.firebase)),
