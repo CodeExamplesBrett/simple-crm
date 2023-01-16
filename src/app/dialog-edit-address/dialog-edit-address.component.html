@@ -1,5 +1,5 @@
 
-<p>dialog-edit-address works!</p><mat-progress-bar *ngIf="loading" mode="indeterminate"></mat-progress-bar>
+<mat-progress-bar *ngIf="loading" mode="indeterminate"></mat-progress-bar>
 
 <div class="dialog-container">
 <h1 mat-dialog-title>Edit address</h1>
@@ -34,7 +34,7 @@
 </div>
 <div mat-dialog-actions>
   <button [disabled]="loading" (click)="closeDialog()" mat-button >Cancel</button>
-  <button [disabled]="loading" (click)="saveUser()" mat-button cdkFocusInitial>Save</button>
+  <button [disabled]="loading" (click)="updateUserAddress()" mat-button cdkFocusInitial>Update</button>
 </div>
 
 </div>

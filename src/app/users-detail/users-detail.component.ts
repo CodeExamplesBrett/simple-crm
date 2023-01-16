@@ -38,7 +38,7 @@ getDocumentID(){
 }
 
 getDocumentDetails(){
-  const coll = collection(this.firestore, 'users');
+      const coll = collection(this.firestore, 'users');
       //doc selects the current game document via game id read above from the url
       const docRef = doc(coll, this.userId);
       //observable looks at the changes in this document with docData
@@ -52,13 +52,19 @@ getDocumentDetails(){
 }
 
 editUserDetails(){
-  this.dialog.open(DialogEditUserComponent);
+  const dialogUser = this.dialog.open(DialogEditUserComponent);
+  // A copy!! from our instance of User is given to the DialogEditUser Component
+  dialogUser.componentInstance.user = new User(this.user.toJson());
+  dialogUser.componentInstance.userId = this.userId
+  
 }
 
 
 editAddressDetails(){
-  const dialog = this.dialog.open(DialogEditAddressComponent);
-  dialog.componentInstance.user = this.user;
+  const dialogAddress = this.dialog.open(DialogEditAddressComponent);
+  // A copy!! from our instance of User is given to the DialogEditAddress Component
+  dialogAddress.componentInstance.user = new User(this.user.toJson());
+  dialogAddress.componentInstance.userId = this.userId;
 }
 
 
