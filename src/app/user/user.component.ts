@@ -31,7 +31,7 @@ export class UserComponent implements OnInit {
     // idField:'id' ---  for details without the id field
     // idField:'customIdName' ---  for details with the id field & document ID
     this.allUsers_observed$ = collectionData(coll,{idField:'customIdName'});
-    //subscribe the observed documentt
+    //subscribe the observed document
     this.allUsers_observed$.subscribe((user) => {
       //copy the documents to the array above "allUsers"
       this.allUsers = user;

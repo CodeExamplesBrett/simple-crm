@@ -16,7 +16,7 @@ export class DialogEditAddressComponent implements OnInit {
     userId: string;
     user: User;
 
-    loading = true;
+    loading = false;
 
 
   constructor(private route:ActivatedRoute, private firestore: Firestore, public dialogRef: MatDialogRef<DialogEditAddressComponent>) { }
