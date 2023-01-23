@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { DialogEditAddressComponent } from './dialog-edit-address/dialog-edit-address.component';
 import { LoginComponent } from './login/login.component';
+import { SignInComponent } from './sign-in/sign-in.component';
 import { UserComponent } from './user/user.component';
 import { UsersDetailComponent } from './users-detail/users-detail.component';
 
@@ -11,7 +12,8 @@ const routes: Routes = [
   {path: 'dashboard', component: DashboardComponent},
   {path: 'user', component: UserComponent},
   {path: 'user/:id', component: UsersDetailComponent},
-  {path: 'login', component: LoginComponent}
+  {path: 'login', component: LoginComponent},
+  {path: 'signin', component: SignInComponent}
 
 ];
 

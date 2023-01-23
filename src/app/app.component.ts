@@ -11,7 +11,7 @@ export class AppComponent implements OnInit {
   openSidenav: boolean;
 
   ngOnInit(): void {
-    //this.openSidenav = true;
+    this.openSidenav = true;
   
   }
 

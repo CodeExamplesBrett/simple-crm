@@ -31,6 +31,7 @@ import { UsersDetailComponent } from './users-detail/users-detail.component';
 import { DialogEditAddressComponent } from './dialog-edit-address/dialog-edit-address.component';
 import { DialogEditUserComponent } from './dialog-edit-user/dialog-edit-user.component';
 import { LoginComponent } from './login/login.component';
+import { SignInComponent } from './sign-in/sign-in.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +42,8 @@ import { LoginComponent } from './login/login.component';
     UsersDetailComponent,
     DialogEditAddressComponent,
     DialogEditUserComponent,
-    LoginComponent
+    LoginComponent,
+    SignInComponent
   ],
   imports: [
     BrowserModule,

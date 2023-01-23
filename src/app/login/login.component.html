@@ -1,15 +1,16 @@
 
-<form #loginForm="ngform"  (ngSubmit)="handleRegister(loginForm.value)">
+<!-- <form #loginForm="ngform"  (ngSubmit)="handleRegister(loginForm.value)"> -->
 
     <!-- #loginForm="ngform" -->
     <!-- <form (submit)="onSubmit()"> -->
+<form>
 
-
-<input name="email" ngModel placeholder="Email" id="email" />
-<input name="password" ngModel placeholder="password" id="password"/>
+<input type="email" name="email" [(ngModel)]="email" placeholder="Email"><br>
+<input type="password" name="password" [(ngModel)]="password" placeholder="password">
 <!-- <button>Sign In</button> -->
-<button>Sign Up</button>
-
+<button (click)="login()">Login</button>
 </form>
+
+
 
 <!-- </form> -->
