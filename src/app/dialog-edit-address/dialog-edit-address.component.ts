@@ -25,10 +25,6 @@ export class DialogEditAddressComponent implements OnInit {
     console.log('the id', this.userId)
   }
 
-  
- 
-
-
   updateUserAddress(){
     //this.getDocumentID();
 

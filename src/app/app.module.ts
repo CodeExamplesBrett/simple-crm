@@ -32,6 +32,7 @@ import { DialogEditAddressComponent } from './dialog-edit-address/dialog-edit-ad
 import { DialogEditUserComponent } from './dialog-edit-user/dialog-edit-user.component';
 import { LoginComponent } from './login/login.component';
 import { SignInComponent } from './sign-in/sign-in.component';
+import { TestComponent } from './test/test.component';
 
 @NgModule({
   declarations: [
@@ -43,7 +44,8 @@ import { SignInComponent } from './sign-in/sign-in.component';
     DialogEditAddressComponent,
     DialogEditUserComponent,
     LoginComponent,
-    SignInComponent
+    SignInComponent,
+    TestComponent
   ],
   imports: [
     BrowserModule,

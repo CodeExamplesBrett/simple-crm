@@ -13,7 +13,7 @@ import { addDoc } from 'firebase/firestore';
 })
 export class DialogAddUserComponent implements OnInit {
 
-  loading = true;
+  loading = false;
   userId: string;
   user = new User();
   birthDate: Date;

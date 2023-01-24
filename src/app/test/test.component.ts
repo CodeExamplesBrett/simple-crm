@@ -1,18 +1,17 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Auth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from '@angular/fire/auth';
-import { Route, Router } from '@angular/router';
 
 @Component({
-  selector: 'app-sign-in',
-  templateUrl: './sign-in.component.html',
-  styleUrls: ['./sign-in.component.scss']
+  selector: 'app-test',
+  templateUrl: './test.component.html',
+  styleUrls: ['./test.component.scss']
 })
-export class SignInComponent implements OnInit {
+export class TestComponent implements OnInit {
 
   signUpForm: FormGroup;
 
-  constructor(public auth: Auth, public router: Router, private fb: FormBuilder) { }
+  constructor(public auth: Auth, private fb: FormBuilder) { }
 
   ngOnInit(): void {
     this.signUpForm = this.fb.group({
@@ -25,7 +24,6 @@ export class SignInComponent implements OnInit {
     createUserWithEmailAndPassword(this.auth, this.signUpForm.value.email, this.signUpForm.value.password)
       .then((response: any)=>{
         console.log(response.user);
-        this.router.navigate(['login']);
       })
       .catch((err)=>{
         alert(err.message);

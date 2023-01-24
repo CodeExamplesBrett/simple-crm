@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Auth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from '@angular/fire/auth';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { Route, Router } from '@angular/router';
@@ -12,16 +13,20 @@ import { signOut } from 'firebase/auth';
 })
 export class LoginComponent implements OnInit {
 
-  email = '';
-  password = '';
+  logInForm: FormGroup;
 
-  constructor(public auth: Auth, private router: Router) { }
+  constructor(public auth: Auth, public router: Router, private fb: FormBuilder) { }
 
   ngOnInit(): void {
+    this.logInForm = this.fb.group({
+      email: ['', Validators.required],
+      password: ['', Validators.required]
+    });
   }
 
-  login(){
-    signInWithEmailAndPassword(this.auth, this.email, this.password)
+
+  onSubmit(){
+    signInWithEmailAndPassword(this.auth, this.logInForm.value.email, this.logInForm.value.password)
       .then((response: any)=>{
         console.log(response.user);
         this.router.navigate(['dashboard']);
@@ -29,14 +34,9 @@ export class LoginComponent implements OnInit {
       })
       .catch((err)=>{
         alert(err.message);
-      });  
+      }); 
   }
 
   
-
-  onSubmit(){
-
-  }
-
 
 }
