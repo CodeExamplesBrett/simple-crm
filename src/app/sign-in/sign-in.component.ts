@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Auth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from '@angular/fire/auth';
 import { Route, Router } from '@angular/router';
+import { LoginService } from '../login.service';
 
 @Component({
   selector: 'app-sign-in',
@@ -12,13 +13,16 @@ export class SignInComponent implements OnInit {
 
   signUpForm: FormGroup;
 
-  constructor(public auth: Auth, public router: Router, private fb: FormBuilder) { }
+  constructor(public auth: Auth, public router: Router, private fb: FormBuilder, public ls: LoginService) { }
 
   ngOnInit(): void {
+    this.ls.openSidenav = false
+    
     this.signUpForm = this.fb.group({
       email: ['', Validators.required],
       password: ['', Validators.required]
     });
+    
   }
 
   onSubmit(){

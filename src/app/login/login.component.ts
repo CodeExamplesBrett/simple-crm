@@ -4,6 +4,7 @@ import { Auth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { Route, Router } from '@angular/router';
 import { signOut } from 'firebase/auth';
+import { LoginService } from '../login.service';
 
 
 @Component({
@@ -13,15 +14,20 @@ import { signOut } from 'firebase/auth';
 })
 export class LoginComponent implements OnInit {
 
+  openSidenav: boolean;
+
   logInForm: FormGroup;
 
-  constructor(public auth: Auth, public router: Router, private fb: FormBuilder) { }
+  constructor(public auth: Auth, public router: Router, private fb: FormBuilder, public ls: LoginService) { }
 
   ngOnInit(): void {
+    this.ls.openSidenav = false
+    
     this.logInForm = this.fb.group({
       email: ['', Validators.required],
       password: ['', Validators.required]
     });
+    
   }
 
 

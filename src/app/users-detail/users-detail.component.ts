@@ -39,7 +39,7 @@ getDocumentID(){
 
 getDocumentDetails(){
       const coll = collection(this.firestore, 'users');
-      //doc selects the current game document via game id read above from the url
+      //doc selects the current user document via user id read above from the url
       const docRef = doc(coll, this.userId);
       //observable looks at the changes in this document with docData
       this.user_observed$ = docData(docRef);
